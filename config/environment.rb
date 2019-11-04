@@ -7,7 +7,7 @@ Rails.application.initialize!
 ActionMailer::Base.smtp_settings = {
   :user_name => ENV['SENDGRID_LOGIN'],
   :password => ENV['SENDGRID_PWD'],
-  :domain => 'jb-eventbrite.herokuapp.com/',
+  :domain => 'assoangels.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
   :authentication => :plain,
