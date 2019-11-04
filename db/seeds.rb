@@ -31,7 +31,7 @@ Event.destroy_all
     title: Faker::Quote.famous_last_words,
     description: Faker::ChuckNorris.fact*2,
     price: rand(1..1000),
-    user: User.all.sample,
+    admin_id: User.all.sample,
     location: Faker::Address.city
   )
 end
