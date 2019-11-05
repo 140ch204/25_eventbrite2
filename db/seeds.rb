@@ -10,14 +10,15 @@ puts "Seed en cours..."
 
 print "Users ... "
 User.destroy_all
-10.times do		
+2.times do		
   last_name_faker = Faker::Name.last_name
   yop_email = last_name_faker + "@" + "yopmail.com"
   User.create(
     first_name: Faker::Name.first_name, 
     last_name: last_name_faker, 
-    description: Faker::Quote.famous_last_words, 
-    email: yop_email)
+    description: Faker::Quote.famous_last_words*20, 
+    email: yop_email,
+    password: "aaaaaa")
 end
 print "Ok"
 puts
@@ -31,7 +32,7 @@ Event.destroy_all
     title: Faker::Quote.famous_last_words,
     description: Faker::ChuckNorris.fact*2,
     price: rand(1..1000),
-    admin_id: User.all.sample,
+    admin: User.all.sample,
     location: Faker::Address.city
   )
 end
@@ -40,7 +41,7 @@ puts
 
 print "Attendances ... "
 Attendance.destroy_all
-10.times do		
+20.times do		
   Attendance.create(
     user: User.all.sample,
     event: Event.all.sample,
