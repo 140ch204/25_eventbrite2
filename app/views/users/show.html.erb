@@ -1,1 +1,21 @@
-show user !
+<h1 class="font-weight-light">Mon profil</h1>
+
+<div>
+  <h2 class="font-weight-light">Mon email : </h2>
+  <p>
+    <%=@current_user.email%> <br/>
+  </p>
+  <h2 class="font-weight-light">Description : </h2>
+    <%=@current_user.description%> <br/>
+
+  <h2 class="font-weight-light">Prénom : </h2>
+    <%=@current_user.first_name%> <br/>
+
+  <h2 class="font-weight-light">Nom : </h2>
+    <%=@current_user.last_name%> <br/>
+
+  <h2 class="font-weight-light">Membre depuis : </h2>
+    <%=@current_user.created_at%> <br/>
+
+</div>
+
