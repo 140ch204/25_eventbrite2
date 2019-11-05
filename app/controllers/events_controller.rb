@@ -9,6 +9,9 @@ class EventsController < ApplicationController
   end
 
   def index
+    @events = Event.all
+    @users = User.all
+    @current_user = current_user
   end
 
   def edit
