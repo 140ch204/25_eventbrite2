@@ -25,13 +25,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="nav nav-pills">
     <li class="nav-item">
-      <a class="nav-link" href="#fat">Créer un événement</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#mdo">Se connecter</a>
+      <a class="nav-link" href="<%= new_event_path %>">Créer un événement</a>
     </li>
     <%if user_signed_in? %>
-
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" href="" aria-expanded="false">Mon profil</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="<%= user_path(current_user.id) %>">Mon profil</a>
+          <a class="dropdown-item" href="<%= destroy_user_session_path %>">Se déconnecter</a>
+        </div>
+      </li>
     <%else%>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" href="" aria-expanded="false">S'inscrire / Se connecter</a>
