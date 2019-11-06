@@ -27,7 +27,7 @@ print "Events ... "
 Event.destroy_all
 10.times do		
   Event.create(
-    start_date: Faker::Date.backward(days: 40),
+    start_date: Faker::Date.forward(days: 40),
     duration: (5*rand(1..20)),
     title: Faker::Quote.famous_last_words,
     description: Faker::ChuckNorris.fact*2,

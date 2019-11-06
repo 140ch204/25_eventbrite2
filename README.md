@@ -1,24 +1,61 @@
-# README
+<h1> EventBride par JB </h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h2> Projet The Hacking Projet 05/11/2019 </h2>
 
-Things you may want to cover:
+1. Installation : 
 
-* Ruby version
+  >
+  > git clone https://github.com/140ch204/25_eventbrite2.git
+  >
+  > cd 25_eventbrite2
+  >
+  > bundle install
+  > 
+  > rails db:drop
+  > 
+  > rails db:create
+  >
+  > rails db:migrate
+  > 
+  > rails db:seed
+  >
 
-* System dependencies
+2. Lancement en localhost :
 
-* Configuration
+  Dans le terminal :
+  >
+  > rails s
+  >
 
-* Database creation
+  Dans le navigateur aller à l'URL suivante : 
 
-* Database initialization
+  http://localhost:3000/
 
-* How to run the test suite
+3. Lancement sur Heroku : 
 
-* Services (job queues, cache servers, search engines, etc.)
+  https://jb-eventbrite.herokuapp.com/
 
-* Deployment instructions
+  Enjoy !
 
-* ...
+4. Connaître les versions utilisées : 
+
+  >
+  > rails about
+  >
+
+5. Composants utilisés :
+
+ - FrameWork : Ruby on Rails
+
+ - base de donnée : PostGre 
+
+ - HTML/CSS : Bootstrap
+
+ - Serveur Heroku
+
+6. Version : 
+
+ - ruby 2.5.1
+
+ - rails 5.2.3
+ 

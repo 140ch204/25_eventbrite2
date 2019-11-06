@@ -1,9 +1,27 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
 
   def new
+    @event = Event.new
   end
 
   def create
+   
+    @event = Event.new(
+      title:params[:title],
+      description:params[:description],
+      location:params[:location],
+      price:params[:price],
+      duration:params[:duration],
+      start_date:params[:start_date],
+      )
+    @event.admin = current_user
+
+      if @event.save
+        redirect_to @event, flash: {success: "Vous avez cree un nouvel evenement" }
+      else
+         render :new
+      end
   end
 
   def show

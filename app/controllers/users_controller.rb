@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
     if params[:id].to_i == current_user.id.to_i
       @current_user = current_user
+      @my_admin_events = Event.where(admin_id: params[:id])
     else
       redirect_to root_url
     end
