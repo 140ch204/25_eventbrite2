@@ -29,7 +29,7 @@
     </li>
     <%if user_signed_in? %>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" href="" aria-expanded="false">Mon profil</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" href="" aria-expanded="false"><%= current_user.first_name %></a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="<%= user_path(current_user.id) %>">Mon profil</a>
           <a class="dropdown-item" <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></a>

@@ -14,11 +14,12 @@ class EventsController < ApplicationController
       price:params[:price],
       duration:params[:duration],
       start_date:params[:start_date],
+      admin: current_user
       )
-    @event.admin = current_user
+    #@event.admin = current_user
 
       if @event.save
-        redirect_to @event, flash: {success: "Vous avez cree un nouvel evenement" }
+        redirect_to event_path(@event.id)
       else
          render :new
       end
@@ -30,16 +31,32 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    @users = User.all
-    @current_user = current_user
   end
 
   def edit
+    @event= Event.find(params[:id])
   end
 
   def update
+    @event= Event.find(params[:id])
+      if @event=Event.update(
+        title: params[:title],
+        price:params[:price],
+        description:params[:description],
+        admin_id:current_user.id,
+        location: params[:location],
+        start_date:params[:start_date],
+        duration:params[:duration]
+        )
+      redirect_to event_path(@event.id)
+		else
+		  render edit
+		end 
   end
 
   def destroy
+    @event= Event.find(params[:id])
+		@event.destroy
+		redirect_to events_path
   end
 end

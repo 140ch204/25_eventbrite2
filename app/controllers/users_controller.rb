@@ -1,12 +1,7 @@
 class UsersController < ApplicationController
+  include UsersHelper
   before_action :authenticate_user!, only: [:show]
-
-
-  def new
-  end
-
-  def create
-  end
+  before_action :right_user
 
   def show
 
